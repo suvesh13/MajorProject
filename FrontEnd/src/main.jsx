@@ -1,36 +1,48 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Layout from './Layout.jsx'
-import HomePage from './components/HomePage.jsx'
-import ImagePage from './components/ImagePage.jsx'
-import VideoPage from './components/VideoPage.jsx'
-
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './Layout.jsx';
+import HomePage from './components/HomePage.jsx';
+import ImagePage from './components/ImagePage.jsx';
+import VideoPage from './components/VideoPage.jsx';
+import Start from './Home/Start.jsx'; // Make sure this path is correct
+import AbstactPage from './components/AbstactPage.jsx';
 
 const router = createBrowserRouter([
+  // Abstract with its own route (and layout)
   {
-    path:"/",
-    element:<Layout/>,
-    children:[
+    path: "/",
+    element: <Start />, // Standalone layout for Abstract
+  },
+  {
+    path:"/abstact",
+    element:<AbstactPage/>
+  },
+
+  // Other pages using shared Layout
+  {
+    path: "/main",
+    element: <Layout />,
+    children: [
       {
-        path:"",
-        element:<HomePage/>
+        path: "home",
+        element: <HomePage />,
       },
       {
-        path:"image",
-        element:<ImagePage/>
+        path: "image",
+        element: <ImagePage />,
       },
       {
-        path:"video",
-        element:<VideoPage/>
-      }
-    ]
-  }
-])
+        path: "video",
+        element: <VideoPage />,
+      },
+    ],
+  },
+]);
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
-  </StrictMode>,
-)
+    <RouterProvider router={router} />
+  </StrictMode>
+);

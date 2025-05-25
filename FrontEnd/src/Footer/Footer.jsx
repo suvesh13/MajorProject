@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div className="w-full bg-gray-400 p-4 shadow-md">
+    <div className="w-full bg-gray-400 p-4 shadow-md mt-auto">
       {/* Model Buttons */}
       <div className="flex flex-wrap justify-center gap-10">
         <button className="bg-gray-800 text-white px-6 py-2 rounded-xl shadow hover:bg-gray-600 transition">
