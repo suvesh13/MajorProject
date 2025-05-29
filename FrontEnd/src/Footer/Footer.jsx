@@ -1,6 +1,9 @@
 import React from 'react';
 
-function Footer() {
+function Footer({ pathname }) {
+  const showFrameRate = pathname === '/main/video';
+  const showPredict = ['/main/video', '/main/image'].includes(pathname);
+
   return (
     <div className="w-full bg-gray-400 p-4 shadow-md mt-auto">
       {/* Model Buttons */}
@@ -16,30 +19,35 @@ function Footer() {
         </button>
       </div>
 
-      {/* Predict and Frame Rate Section */}
-      <div className="flex flex-wrap items-center justify-center gap-6 mt-4">
-        {/* Frame Rate Dropdown */}
-        <div className="flex items-center">
-          <label htmlFor="frameRate" className="mr-3 text-lg font-medium">
-            Frame Rate:
-          </label>
-          <select
-            id="frameRate"
-            className="bg-gray-900 text-white px-4 py-2 rounded-xl border border-gray-600 focus:outline-none"
-            defaultValue="15"
-          >
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="30">30</option>
-          </select>
-        </div>
+      {(showFrameRate || showPredict) && (
+        <div className="flex flex-wrap items-center justify-center gap-6 mt-4">
+          {/* Frame Rate Dropdown */}
+          {showFrameRate && (
+            <div className="flex items-center">
+              <label htmlFor="frameRate" className="mr-3 text-lg font-medium">
+                Frame Rate:
+              </label>
+              <select
+                id="frameRate"
+                className="bg-gray-900 text-white px-4 py-2 rounded-xl border border-gray-600 focus:outline-none"
+                defaultValue="15"
+              >
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+              </select>
+            </div>
+          )}
 
-        {/* Predict Button */}
-        <button className="bg-blue-600 text-white px-8 py-2 rounded-xl shadow hover:bg-blue-800 transition">
-          Predict
-        </button>
-      </div>
+          {/* Predict Button */}
+          {showPredict && (
+            <button className="bg-blue-600 text-white px-8 py-2 rounded-xl shadow hover:bg-blue-800 transition">
+              Predict
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

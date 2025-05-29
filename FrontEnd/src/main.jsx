@@ -8,6 +8,8 @@ import ImagePage from './components/ImagePage.jsx';
 import VideoPage from './components/VideoPage.jsx';
 import Start from './Home/Start.jsx'; // Make sure this path is correct
 import AbstactPage from './components/AbstactPage.jsx';
+import ImageResult from './components/ImageResult.jsx';
+import VideoResult from './components/VideoResult.jsx';
 
 const router = createBrowserRouter([
   // Abstract with its own route (and layout)
@@ -34,8 +36,16 @@ const router = createBrowserRouter([
         element: <ImagePage />,
       },
       {
+        path: "image-result", // ✅ Add this route
+        element: <ImageResult />,
+      },
+      {
         path: "video",
         element: <VideoPage />,
+      },
+      {
+        path: "video-result",
+        element: <VideoResult />, // ✅ Route to show after clicking Predict on video
       },
     ],
   },
