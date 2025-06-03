@@ -29,20 +29,16 @@ function AbstactPage() {
           Abstract
         </h1>
         <p className="text-lg leading-relaxed bg-black bg-opacity-40 p-6 rounded-lg shadow-lg">
-         Abstract: As the prevalence of deepfake videos continues to escalate, there is an urgent need for 
-        robust and efficient detection methods to combat the potential consequences of misinformation and 
-        manipulation in our digital landscape. Deepfake technology, which utilizes advanced artificial 
-        intelligence to create highly realistic but fraudulent videos, poses significant threats to trust and 
-        authenticity across various domains, including politics, social media, and entertainment. This 
-        abstract explores the application of Long Short-Term Memory (LSTM) networks in the realm of 
-        deepfake video detection. The proposed methodology involves several key steps, beginning with 
-        the preprocessing of video data. This includes the creation of high-quality training datasets and the 
-        implementation of data augmentation techniques designed to enhance model generalization and 
-        robustness. Furthermore, we delve into the training process and optimization strategies specific to 
-        LSTM networks, focusing on hyperparameter tuning and loss function adjustments. By adopting 
-        these comprehensive approaches, we aim to achieve optimal performance in deepfake face 
-        detection, thereby providing a valuable tool for mitigating the risks associated with manipulated 
-        media and preserving the integrity of digital content.
+         Abstract: To detect manipulated multimedia content, the DeepFake Detection System utilizes advanced artificial 
+intelligence methods. A more robust deepfake detection method is offered by the system using audio and video 
+analysis. To identify faces and areas of interest, the video module utilizes "YOLO (You Only Look Once)". Next, 
+it analyzes the data with "CODE (Contrastive Deepfake Embeddings)" to obtain high-dimensional features and 
+find inconsistencies, like unusual textures and facial movements. To detect manipulation, MelodyMachine 
+processes the audio by monitoring pitch shifts, tone, phoneme sequence, and temporal consistency. Through cross-
+modal analysis by comparing video and audio lip movement timing, the system can perform detection even better. 
+An effective tool for identifying deepfakes, this pipeline's multiple steps ensure accurate classification of audio 
+and video content. A reliable mechanism for authenticating audiovisual content has been established by the 
+coupling of YOLO, CoDE, and MelodyMachine. This method allows for thorough detection..
         
         </p>
       </div>

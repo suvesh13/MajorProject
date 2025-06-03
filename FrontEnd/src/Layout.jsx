@@ -9,7 +9,7 @@ function Layout() {
   return (
     <div
       className="bg-cover bg-center bg-no-repeat text-white flex flex-col min-h-screen"
-      style={{ backgroundImage: "url('/Image/bgImage.webp')" }}
+      style={{ backgroundImage: "url('/Image/bgII.jpg')" }}
     >
       <Header />
 
